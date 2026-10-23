@@ -94,13 +94,4 @@ Open Swagger UI: http://127.0.0.1:8000/docs
 2. **Streaming vs Batch Inference:** Streaming processes each incoming record sequentially, while batch inference processes a collected group together.
 3. **Why FastAPI?** It provides REST endpoints, request validation, interactive Swagger documentation, and a convenient way for other applications to call the model.
 4. **Why reuse one trained model?** The same fitted preprocessing and classifier keep the predictions consistent across online, batch, streaming, and API serving.
-
-## Submission checklist
-
-- [x] Include the Kaggle Titanic `data/train.csv`.
-- [x] Train and save the pipeline and evaluate accuracy on a held-out test split.
-- [x] Generate online, batch (20 records), and streaming (10 records with one-second delay) inference outputs.
-- [x] Generate `batch_predictions.csv`, the model artifact, evidence images, and `assignment_report.pdf`.
-- [x] Test `/health`, valid `/predict`, and invalid `/predict` requests; all automated tests pass.
-- [ ] If required by your faculty, take a separate browser screenshot of Swagger UI `/docs` (the included API evidence images are real endpoint responses, not browser captures).
-- [ ] Upload the full project to a public GitHub repository and submit the repository URL as required by your instructor.
+r.
