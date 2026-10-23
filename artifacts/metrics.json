@@ -1,0 +1,46 @@
+{
+  "model_name": "Random Forest Classifier",
+  "dataset": "Kaggle Titanic - train.csv",
+  "dataset_rows": 891,
+  "training_rows": 712,
+  "testing_rows": 179,
+  "accuracy": 0.8156424581005587,
+  "accuracy_percent": 81.56,
+  "random_state": 42,
+  "features": [
+    "Pclass",
+    "Age",
+    "SibSp",
+    "Parch",
+    "Fare",
+    "Sex",
+    "Embarked"
+  ],
+  "classification_report": {
+    "0": {
+      "precision": 0.8290598290598291,
+      "recall": 0.8818181818181818,
+      "f1-score": 0.8546255506607929,
+      "support": 110.0
+    },
+    "1": {
+      "precision": 0.7903225806451613,
+      "recall": 0.7101449275362319,
+      "f1-score": 0.7480916030534351,
+      "support": 69.0
+    },
+    "accuracy": 0.8156424581005587,
+    "macro avg": {
+      "precision": 0.8096912048524951,
+      "recall": 0.7959815546772069,
+      "f1-score": 0.8013585768571141,
+      "support": 179.0
+    },
+    "weighted avg": {
+      "precision": 0.8141275936374153,
+      "recall": 0.8156424581005587,
+      "f1-score": 0.8135593920858897,
+      "support": 179.0
+    }
+  }
+}

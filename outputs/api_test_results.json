@@ -1,0 +1,111 @@
+{
+  "health": {
+    "method": "GET",
+    "path": "/health",
+    "status_code": 200,
+    "response": {
+      "status": "ok",
+      "model_loaded": true
+    }
+  },
+  "valid_predict": {
+    "method": "POST",
+    "path": "/predict",
+    "status_code": 200,
+    "request": {
+      "Pclass": 3,
+      "Sex": "male",
+      "Age": 22,
+      "SibSp": 1,
+      "Parch": 0,
+      "Fare": 7.25,
+      "Embarked": "S"
+    },
+    "response": {
+      "prediction": 0,
+      "label": "Did not survive"
+    }
+  },
+  "invalid_predict": {
+    "method": "POST",
+    "path": "/predict",
+    "status_code": 422,
+    "request": "Invalid values (Pclass=9, Sex=unknown, Age=-5, SibSp=-1, Fare=-3, Embarked=X)",
+    "response": {
+      "detail": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "body",
+            "Pclass"
+          ],
+          "msg": "Input should be less than or equal to 3",
+          "input": 9,
+          "ctx": {
+            "le": 3
+          }
+        },
+        {
+          "type": "literal_error",
+          "loc": [
+            "body",
+            "Sex"
+          ],
+          "msg": "Input should be 'male' or 'female'",
+          "input": "unknown",
+          "ctx": {
+            "expected": "'male' or 'female'"
+          }
+        },
+        {
+          "type": "greater_than_equal",
+          "loc": [
+            "body",
+            "Age"
+          ],
+          "msg": "Input should be greater than or equal to 0",
+          "input": -5,
+          "ctx": {
+            "ge": 0.0
+          }
+        },
+        {
+          "type": "greater_than_equal",
+          "loc": [
+            "body",
+            "SibSp"
+          ],
+          "msg": "Input should be greater than or equal to 0",
+          "input": -1,
+          "ctx": {
+            "ge": 0
+          }
+        },
+        {
+          "type": "greater_than_equal",
+          "loc": [
+            "body",
+            "Fare"
+          ],
+          "msg": "Input should be greater than or equal to 0",
+          "input": -3,
+          "ctx": {
+            "ge": 0.0
+          }
+        },
+        {
+          "type": "literal_error",
+          "loc": [
+            "body",
+            "Embarked"
+          ],
+          "msg": "Input should be 'C', 'Q' or 'S'",
+          "input": "X",
+          "ctx": {
+            "expected": "'C', 'Q' or 'S'"
+          }
+        }
+      ]
+    }
+  }
+}
